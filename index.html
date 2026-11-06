@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Meal Plans · Comida Casera y Saludable</title>
+    <meta name="description" content="Viandas caseras, saludables y listas en minutos. Packs semanales y mensuales. Envíos en CABA.">
+    
+    <meta name="theme-color" content="#F7F9F4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- TIPOGRAFÍAS EDITORIALES NOBLES: FRAUNCES + PLUS JAKARTA SANS + SPACE GROTESK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600;1,9..144,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. SISTEMA CROMÁTICO EXTRAÍDO MATEMÁTICAMENTE DEL SVG OFICIAL:
+              - Verde Hoja Palta: #79A13C
+              - Verde Bosque / Tipográfico: #4B612C
+              - Azul Meal Plans: #3884C5
+           ========================================================================== */
+        :root {
+            --color-chalk-bg: #F7F9F4;
+            --color-bone-pure: #FFFFFF;
+            --color-bone-soft: #EDF3E4;
+            
+            --color-palta-green: #79A13C;
+            --color-palta-deep: #4B612C;
+            --color-palta-soft: #EEF5E5;
+            
+            --color-palta-blue: #3884C5;
+            --color-palta-blue-deep: #20598B;
+            --color-palta-blue-soft: #E9F3FB;
+
+            --color-warm-olive: #627E34;
+            --color-warm-accent: #E58E26;
+            --color-warm-soft: #FEF7EE;
+
+            --color-text-dark: #273417;
+            --color-text-body: #3C4A29;
+            --color-text-muted: #6B7B58;
+            
+            --font-display: 'Fraunces', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --font-mono: 'Space Grotesk', monospace;
+
+            --shadow-float: 0 16px 36px -10px rgba(44, 58, 26, 0.10), 0 3px 10px rgba(0, 0, 0, 0.03);
+            --shadow-canopy: 0 14px 32px -8px rgba(75, 97, 44, 0.16), 0 3px 10px rgba(0, 0, 0, 0.03);
+            --shadow-glow-green: 0 14px 34px -8px rgba(121, 161, 60, 0.35);
+            --shadow-glow-deep: 0 14px 34px -8px rgba(75, 97, 44, 0.35);
+            --shadow-glow-blue: 0 14px 34px -8px rgba(56, 132, 197, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            background-color: var(--color-chalk-bg);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text-body);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 clamp(10px, 3.5vw, 16px) 64px;
+            overflow-x: hidden;
+            position: relative;
+            background-color: var(--color-chalk-bg);
+        }
+
+        /* ==========================================================================
+           2. FONDO BOTÁNICO FRESCO + PATRÓN CINEMATOGRÁFICO DE HOJAS Y BROTES
+           ========================================================================== */
+        .sunset-ambient-stage {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='68' height='68' viewBox='0 0 68 68'%3E%3Cpath d='M34 14 C34 14 24 28 24 38 C24 44.5 28.5 49 34 49 C39.5 49 44 44.5 44 38 C44 28 34 14 34 14 Z' fill='%2379A13C' fill-opacity='0.12' stroke='%234B612C' stroke-width='1.2' stroke-opacity='0.25'/%3E%3Cpath d='M34 26 C34 26 29 34 29 39 C29 41.8 31.2 44 34 44 C36.8 44 39 41.8 39 39 C39 34 34 26 34 26 Z' fill='%234B612C' fill-opacity='0.10'/%3E%3Cpath d='M8 8 L10 14 L16 16 L10 18 L8 24 L6 18 L0 16 L6 14 Z' fill='%2379A13C' fill-opacity='0.22'/%3E%3Cpath d='M60 52 L61.5 56.5 L66 58 L61.5 59.5 L60 64 L58.5 59.5 L54 58 L58.5 56.5 Z' fill='%233884C5' fill-opacity='0.22'/%3E%3Ccircle cx='60' cy='12' r='2.5' fill='%233884C5' fill-opacity='0.25'/%3E%3Ccircle cx='8' cy='56' r='2.2' fill='%2379A13C' fill-opacity='0.25'/%3E%3C/svg%3E"),
+                linear-gradient(180deg, #FFFFFF 0%, #F9FBF6 28%, #F2F7EC 65%, #E9F1E0 100%);
+            background-size: 68px 68px, 100% 100%;
+            background-repeat: repeat, no-repeat;
+            animation: smoothFilmDrift 38s linear infinite;
+        }
+
+        @keyframes smoothFilmDrift {
+            0% {
+                background-position: 0px 0, 0 0;
+            }
+            100% {
+                background-position: 680px 0, 0 0;
+            }
+        }
+
+        .sun-flare-veil {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            max-width: 600px;
+            height: 240px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.95) 0%, rgba(238, 246, 230, 0.3) 60%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ==========================================================================
+           3. ESTANDARTE OVOIDE BLANCO: ENMARCADO EXACTO Y ARMONIOSO DEL LOGO
+           ========================================================================== */
+        .logo-white-canopy {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(350px, 88vw);
+            height: clamp(118px, 25vw, 132px);
+            background: var(--color-bone-pure);
+            border-radius: 0 0 50% 50% / 0 0 100% 100%;
+            box-shadow: var(--shadow-canopy);
+            border-bottom: 2px solid rgba(121, 161, 60, 0.30);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .logo-white-canopy::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(121, 161, 60, 0.45), transparent);
+        }
+
+        /* ==========================================================================
+           4. SHELL PRINCIPAL MOBILE-FIRST Y 100% RESPONSIVE
+           ========================================================================== */
+        .master-hub-shell {
+            width: 100%;
+            max-width: 485px;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            z-index: 10;
+            position: relative;
+            padding-top: 14px;
+        }
+
+        /* ==========================================================================
+           5. HERO LOGO CON TAMAÑO EQUILIBRADO Y PERFECTO RESPONSIVE
+           ========================================================================== */
+        .hero-logo-monument {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 4px 6px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .logo-free-stage {
+            width: 100%;
+            max-width: min(180px, 48vw);
+            height: clamp(74px, 20vw, 88px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            filter: drop-shadow(0 5px 12px rgba(75, 97, 44, 0.18));
+            animation: slowVitalityFloat 7.5s ease-in-out infinite alternate;
+            margin: 6px auto 0;
+        }
+
+        @keyframes slowVitalityFloat {
+            0%   { transform: translateY(0px) scale(1); }
+            50%  { transform: translateY(-3px) scale(1.02); filter: drop-shadow(0 8px 18px rgba(75, 97, 44, 0.24)); }
+            100% { transform: translateY(0px) scale(1); }
+        }
+
+        .brand-svg-raw {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+        }
+
+        .hero-text-block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 18px;
+        }
+
+        .brand-motto-headline {
+            font-family: var(--font-display);
+            font-size: clamp(1.28rem, 5vw, 1.72rem);
+            font-weight: 700;
+            font-style: italic;
+            color: var(--color-text-dark);
+            line-height: 1.18;
+            letter-spacing: -0.02em;
+            word-break: break-word;
+        }
+
+        .brand-lead-caption {
+            font-family: var(--font-sans);
+            font-size: clamp(0.84rem, 2.8vw, 0.90rem);
+            line-height: 1.48;
+            color: var(--color-text-body);
+            max-width: 94%;
+            margin-top: 7px;
+            font-weight: 500;
+        }
+
+        .brand-lead-caption strong {
+            color: var(--color-palta-deep);
+            font-weight: 800;
+        }
+
+        .badges-capsule-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+            width: 100%;
+        }
+
+        .pill-badge-seal {
+            background: #FFFFFF;
+            border: 1.5px solid rgba(121, 161, 60, 0.32);
+            border-radius: 999px;
+            padding: 5px 11px;
+            font-size: clamp(0.68rem, 2.5vw, 0.72rem);
+            font-weight: 800;
+            color: var(--color-text-dark);
+            box-shadow: 0 4px 12px rgba(75, 97, 44, 0.05);
+            letter-spacing: 0.02em;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        /* ==========================================================================
+           6. HERO CARD WHATSAPP CON ACCESO DIRECTO AL MENÚ
+           ========================================================================== */
+        .card-whatsapp-portal {
+            background: #FFFFFF;
+            border: 2px solid #25D366;
+            border-radius: 28px 16px 28px 16px;
+            padding: clamp(16px, 4.5vw, 22px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--color-text-dark);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.20);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card-whatsapp-portal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75), transparent);
+            transform: skewX(-22deg);
+            animation: delicateSheen 6.5s infinite ease-in-out;
+        }
+
+        @keyframes delicateSheen {
+            0%, 50% { left: -120%; }
+            80%, 100% { left: 160%; }
+        }
+
+        .card-whatsapp-portal:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 18px 42px rgba(37, 211, 102, 0.30);
+        }
+
+        .hero-left-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            min-width: 0;
+        }
+
+        .hero-live-beacon {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-mono);
+            font-size: clamp(0.62rem, 2.4vw, 0.68rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #1FAF53;
+        }
+
+        .pulse-core {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #25D366;
+            box-shadow: 0 0 10px #25D366;
+            animation: pulseGlow 1.8s infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%      { opacity: 0.4; transform: scale(0.8); }
+        }
+
+        .hero-action-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.15rem, 4.8vw, 1.35rem);
+            font-weight: 900;
+            line-height: 1.15;
+            color: var(--color-text-dark);
+            letter-spacing: -0.01em;
+            word-break: break-word;
+        }
+
+        .hero-action-caption {
+            font-size: clamp(0.76rem, 2.6vw, 0.84rem);
+            color: var(--color-text-muted);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .whatsapp-bubble-btn {
+            width: clamp(44px, 12vw, 52px);
+            height: clamp(44px, 12vw, 52px);
+            border-radius: 50%;
+            background: #25D366;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.40);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-whatsapp-portal:hover .whatsapp-bubble-btn {
+            transform: scale(1.12) rotate(12deg);
+        }
+
+        .whatsapp-bubble-btn svg {
+            width: clamp(22px, 6vw, 26px);
+            height: clamp(22px, 6vw, 26px);
+            fill: #FFFFFF;
+        }
+
+        /* ==========================================================================
+           7. GRILLA BENTO CON COLORIMETRÍA ARMONIZADA DE PALTA
+           ========================================================================== */
+        .morph-bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(10px, 3vw, 14px);
+        }
+
+        .bento-cell {
+            padding: clamp(16px, 4vw, 20px) clamp(14px, 3.5vw, 18px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 145px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            min-width: 0;
+        }
+
+        .bento-cell:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 1. CELDA VERDE PALTA VIBRANTE (#79A13C) - PACK ADULTOS */
+        .cell-palta-green {
+            background: var(--color-palta-green);
+            color: #FFFFFF;
+            border-radius: 40px 18px 18px 18px;
+            border: 2px solid #6B8F34;
+            box-shadow: var(--shadow-glow-green);
+        }
+
+        .cell-palta-green .cell-tag { color: #E7F6D1; }
+        .cell-palta-green .cell-desc { color: #F4FBEB; }
+        .cell-palta-green .cell-arrow { color: #FFFFFF; }
+
+        /* 2. CELDA AZUL MEAL PLANS (#3884C5) - VER MENÚ SEMANAL */
+        .cell-palta-blue {
+            background: var(--color-palta-blue);
+            color: #FFFFFF;
+            border-radius: 18px 40px 18px 18px;
+            border: 2px solid #2C71AA;
+            box-shadow: var(--shadow-glow-blue);
+        }
+
+        .cell-palta-blue .cell-tag { color: #D5ECFD; }
+        .cell-palta-blue .cell-desc { color: #EDF7FE; }
+        .cell-palta-blue .cell-arrow { color: #FFFFFF; }
+
+        /* 3. CELDA VERDE BOSQUE PROFUNDO (#4B612C) */
+        .cell-palta-deep {
+            background: var(--color-palta-deep);
+            color: #FFFFFF;
+            border-radius: 18px 18px 18px 40px;
+            border: 2px solid #3F5224;
+            box-shadow: var(--shadow-glow-deep);
+        }
+
+        .cell-palta-deep .cell-tag { color: #D7E7BF; }
+        .cell-palta-deep .cell-desc { color: #EBF3DC; }
+        .cell-palta-deep .cell-arrow { color: #FFFFFF; }
+
+        /* 4. CELDA BLANCA BOTÁNICA - PROMO MAYORISTA 10% OFF */
+        .cell-white-card {
+            background: #FFFFFF;
+            color: var(--color-text-dark);
+            border-radius: 18px 18px 40px 18px;
+            border: 2px solid rgba(121, 161, 60, 0.35);
+            box-shadow: var(--shadow-float);
+        }
+
+        .cell-white-card .cell-tag { color: var(--color-palta-green); }
+        .cell-white-card .cell-desc { color: var(--color-text-muted); }
+        .cell-white-card .cell-arrow { color: var(--color-palta-deep); }
+
+        /* 5. CELDA RECTANGULAR COMPLETA: CÓMO PEDIR EN 3 PASOS */
+        .cell-wide-card {
+            grid-column: span 2;
+            min-height: auto;
+            flex-direction: row;
+            align-items: center;
+            background: #FFFFFF;
+            border: 2px solid rgba(121, 161, 60, 0.35);
+            border-left: 6px solid var(--color-palta-green);
+            border-radius: 22px;
+            padding: 18px 20px;
+            box-shadow: var(--shadow-float);
+            color: var(--color-text-dark);
+            gap: 10px;
+        }
+
+        .cell-wide-card:hover {
+            border-color: var(--color-palta-green);
+        }
+
+        .cell-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .cell-tag {
+            font-family: var(--font-mono);
+            font-size: 0.66rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .cell-arrow {
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            font-weight: 800;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .bento-cell:hover .cell-arrow {
+            transform: translate(4px, -4px);
+        }
+
+        .cell-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.05rem, 4vw, 1.25rem);
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            word-break: break-word;
+        }
+
+        .cell-desc {
+            font-size: 0.78rem;
+            margin-top: 4px;
+            line-height: 1.38;
+            font-weight: 500;
+        }
+
+        /* ==========================================================================
+           8. SHOWCASE HORIZONTAL DE VIANDAS Y PACKS
+           ========================================================================== */
+        .showcase-flow-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .showcase-nav-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            padding: 0 4px;
+        }
+
+        .showcase-heading {
+            font-family: var(--font-display);
+            font-size: clamp(1.15rem, 4.5vw, 1.25rem);
+            font-weight: 800;
+            color: var(--color-text-dark);
+        }
+
+        .showcase-cta {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--color-palta-deep);
+            letter-spacing: 0.08em;
+        }
+
+        .dishes-snap-slider {
+            display: flex;
+            gap: 13px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 4px 2px 14px;
+            scrollbar-width: none;
+        }
+
+        .dishes-snap-slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .product-porcelain-card {
+            flex: 0 0 clamp(185px, 60vw, 215px);
+            scroll-snap-align: start;
+            background: #FFFFFF;
+            border: 1.5px solid rgba(121, 161, 60, 0.28);
+            border-radius: 20px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--color-text-dark);
+            box-shadow: var(--shadow-float);
+            transition: all 0.28s ease;
+        }
+
+        .product-porcelain-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-palta-green);
+        }
+
+        .product-frame-img {
+            width: 100%;
+            height: 145px;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #F1F6EA;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-frame-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-porcelain-card:hover .product-frame-img img {
+            transform: scale(1.08);
+        }
+
+        .product-badge-corner {
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            font-family: var(--font-mono);
+            font-size: 0.58rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: var(--color-palta-deep);
+            color: #FFFFFF;
+            letter-spacing: 0.04em;
+        }
+
+        .product-name-label {
+            font-family: var(--font-sans);
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: var(--color-text-dark);
+            line-height: 1.25;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-price-label {
+            font-family: var(--font-mono);
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: var(--color-palta-deep);
+            margin-top: 2px;
+        }
+
+        /* ==========================================================================
+           9. VIRALES DE REDES & REELS
+           ========================================================================== */
+        .virals-dark-pod {
+            background: var(--color-palta-deep);
+            color: #FAFBF7;
+            border-radius: 28px;
+            padding: 22px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-shadow: 0 16px 44px rgba(44, 58, 26, 0.28);
+        }
+
+        .virals-header-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .virals-main-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #FFFFFF;
+        }
+
+        .virals-bubble-tag {
+            font-family: var(--font-mono);
+            font-size: 0.66rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+            color: #FFFFFF;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+        }
+
+        .virals-track-scroll {
+            display: flex;
+            gap: 11px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 4px;
+            scrollbar-width: none;
+        }
+
+        .virals-track-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .viral-story-tile {
+            flex: 0 0 125px;
+            height: 175px;
+            scroll-snap-align: start;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            background: #394B22;
+            text-decoration: none;
+            color: #FFFFFF;
+            transition: transform 0.25s ease;
+        }
+
+        .viral-story-tile:hover {
+            transform: scale(1.05);
+        }
+
+        .viral-story-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.88);
+        }
+
+        .play-ring-icon {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .play-ring-icon svg {
+            width: 13px;
+            height: 13px;
+            fill: #FFFFFF;
+            margin-left: 2px;
+        }
+
+        .tile-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 6px 4px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ==========================================================================
+           10. TARJETA ENVIOS & BENEFICIOS DE PALTA
+           ========================================================================== */
+        .info-enclosure-pod {
+            background: #FFFFFF;
+            border: 1.5px solid rgba(121, 161, 60, 0.35);
+            border-radius: 22px;
+            padding: clamp(16px, 4vw, 20px);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: var(--shadow-float);
+        }
+
+        .pod-head-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pod-title-text {
+            font-family: var(--font-display);
+            font-size: clamp(1.05rem, 4vw, 1.15rem);
+            font-weight: 800;
+            color: var(--color-text-dark);
+        }
+
+        .pod-items-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .check-item-line {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--color-text-body);
+            line-height: 1.4;
+        }
+
+        .bullet-sun {
+            color: var(--color-palta-green);
+            font-weight: 800;
+            font-size: 0.95rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        /* ==========================================================================
+           11. FOOTER NOBLE CON ICONOS VECTORIALES OFICIALES
+           ========================================================================== */
+        .hub-noble-footer {
+            margin-top: 10px;
+            padding-top: 22px;
+            border-top: 1.5px dashed rgba(121, 161, 60, 0.35);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .footer-brand-monument {
+            font-family: var(--font-display);
+            font-size: clamp(1.15rem, 5vw, 1.35rem);
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: var(--color-text-dark);
+            word-break: break-word;
+        }
+
+        .footer-social-icons-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            width: 100%;
+        }
+
+        .social-icon-bubble {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            border: 1.5px solid rgba(121, 161, 60, 0.32);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-palta-deep);
+            box-shadow: 0 4px 14px rgba(75, 97, 44, 0.08);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .social-icon-bubble svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            transition: transform 0.25s ease;
+        }
+
+        .social-icon-bubble:hover {
+            transform: translateY(-3px) scale(1.08);
+            border-color: var(--color-palta-green);
+            color: var(--color-palta-green);
+            box-shadow: 0 8px 20px rgba(121, 161, 60, 0.22);
+        }
+
+        .footer-address-caption {
+            font-size: 0.74rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+            max-width: 380px;
+            word-break: break-word;
+        }
+
+        .footer-legal-copy {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--color-text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FONDO EN TONO BOTÁNICO LUMINOSO + PATRÓN CINEMÁTICO SUAVE CON DESPLAZAMIENTO A LA DERECHA -->
+    <div class="sunset-ambient-stage" aria-hidden="true"></div>
+
+    <!-- DESTELLO DE LUZ SUPERIOR -->
+    <div class="sun-flare-veil" aria-hidden="true"></div>
+
+    <!-- ESTANDARTE OVOIDE BLANCO: ENMARCADO EXACTO Y ARMONIOSO DEL LOGO -->
+    <div class="logo-white-canopy" aria-hidden="true"></div>
+
+    <!-- ENVOLVENTE MÓVIL PRINCIPAL -->
+    <main class="master-hub-shell">
+
+        <!-- 1. CABECERA: LOGO NUEVO VECTORIAL EN TAMAÑO PERFECTO Y ARMÓNICO -->
+        <header class="hero-logo-monument">
+            
+            <div class="logo-free-stage">
+                <!-- SVG Oficial Nuevo Palta Meal Plans -->
+                <svg id="Layer_1" data-name="Layer 1" class="brand-svg-raw" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.16 113.43">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #79a13c;
+                      }
+
+                      .cls-1, .cls-2 {
+                        stroke-width: 0px;
+                      }
+
+                      .cls-2 {
+                        fill: #3884c5;
+                      }
+                    </style>
+                  </defs>
+                  <g>
+                    <path class="cls-2" d="M22.46,88.45l.08-18.68c.66-.12,1.53-.19,2.6-.19.62,0,1.16.14,1.64.42.48.28.96.88,1.46,1.8l5.09,9.15,5.94-11.09c.86-.19,1.61-.28,2.24-.28.86,0,1.46.14,1.81.43.35.29.52.8.52,1.55v16.89h-3.4v-14.19l-5.62,10.09h-3.06s-5.89-10.09-5.89-10.09v14.19h-3.4Z"/>
+                    <path class="cls-2" d="M49.41,69.72h12.53c-.14,1.04-.47,2.06-.99,3.08-2-.2-4.17-.29-6.5-.29h-1.45v4.95h6.32c-.2,1.12-.5,2.13-.91,3.03-.96-.12-1.87-.2-2.73-.21l-2.68-.03v5.43h1.29c2.03,0,3.49-.02,4.36-.07.87-.04,2-.18,3.37-.42-.05.66-.17,1.31-.33,1.94-.17.63-.35,1.08-.55,1.33h-11.72v-18.74Z"/>
+                    <path class="cls-2" d="M77.84,88.45l-1.28-4.04h-7.15l-1.15,4.04h-3.53l5.78-18.6c.71-.18,1.5-.27,2.36-.27,1.46,0,2.34.41,2.62,1.23l6.02,17.64h-3.67ZM72.83,72.61l-2.57,8.91h5.38l-2.81-8.91Z"/>
+                    <path class="cls-2" d="M85.17,88.45v-18.68c.48-.12,1.03-.19,1.63-.19.71,0,1.22.16,1.51.48s.44.88.44,1.69v13.71h1.53c1.91,0,3.3-.03,4.18-.08.87-.05,2.01-.2,3.4-.43-.18,1.8-.42,2.97-.72,3.51h-11.97Z"/>
+                    <path class="cls-2" d="M130.38,75.85c0,1.07-.19,2.07-.56,3s-1.04,1.91-1.98,2.94c-1.61.34-3.44.51-5.51.51h-2.76v6.16h-3.61v-18.26c1.5-.5,3.76-.75,6.77-.75,2.59,0,4.51.49,5.77,1.46,1.26.97,1.89,2.62,1.89,4.94ZM119.57,72.39v7.01h1.77c1.43,0,2.71-.08,3.85-.24,1-.79,1.5-1.92,1.5-3.4,0-1.34-.32-2.28-.95-2.82-.63-.54-1.64-.82-3.01-.82-1.02,0-2.07.09-3.16.27Z"/>
+                    <path class="cls-2" d="M134.77,88.45v-18.68c.48-.12,1.03-.19,1.63-.19.71,0,1.22.16,1.51.48.29.32.44.88.44,1.69v13.71h1.53c1.91,0,3.3-.03,4.18-.08.87-.05,2.01-.2,3.4-.43-.18,1.8-.42,2.97-.72,3.51h-11.96Z"/>
+                    <path class="cls-2" d="M162.69,88.45l-1.28-4.04h-7.15l-1.15,4.04h-3.53l5.78-18.6c.71-.18,1.5-.27,2.36-.27,1.46,0,2.34.41,2.62,1.23l6.02,17.64h-3.67ZM157.69,72.61l-2.57,8.91h5.38l-2.81-8.91Z"/>
+                    <path class="cls-2" d="M170.03,88.45l.03-18.68c.68-.12,1.47-.19,2.38-.19,1.4,0,2.56.71,3.48,2.11l5.75,8.17c.5.6.99,1.44,1.45,2.54-.14-.66-.21-1.65-.21-2.97v-9.66c.5-.12,1-.19,1.5-.19.62,0,1.07.14,1.33.42.26.28.39.76.39,1.46v17.13h-2.6l-8.81-13.04c-.46-.7-1.04-1.74-1.71-3.13.18.8.27,1.85.27,3.13v12.9h-3.24Z"/>
+                    <path class="cls-2" d="M196.61,80.05c-2.14-.2-3.59-.7-4.35-1.5-.76-.8-1.09-2.14-1-4.01.05-1.68.39-3.2,1.02-4.58,1.5-.34,3.5-.51,6-.51s4.43.13,6.02.4c-.04,1.11-.24,2.06-.62,2.86-1.46-.25-3.03-.38-4.71-.38-1.82,0-3.13.1-3.93.29-.25.61-.38,1.22-.4,1.85-.02.39,0,.73.05,1,.05.28.2.52.44.72s.45.37.63.48c.18.12.52.22,1.02.32.5.1.89.17,1.16.21.28.04.77.11,1.49.2,3.41.39,5.11,2.12,5.11,5.19,0,1.2-.11,2.31-.33,3.33-.22,1.03-.52,1.77-.9,2.24-1.64.36-3.68.54-6.1.54s-4.42-.21-6.08-.64c-.39-.79-.61-1.89-.64-3.32,2,.7,4.1,1.04,6.29,1.04,1.68,0,2.94-.1,3.8-.29.39-.73.59-1.64.59-2.73,0-.71-.38-1.31-1.14-1.78-.76-.47-1.9-.79-3.41-.95Z"/>
+                  </g>
+                  <path class="cls-1" d="M226.16,105.1c-3.54,2.93-7.57,5.72-12.04,8.33H12.04c-4.47-2.61-8.5-5.4-12.04-8.33h226.16Z"/>
+                  <path class="cls-1" d="M60.04,34.3c3.78-4.82,8.05-8.85,13.35-11.75,4.69-2.56,9.62-3.73,14.91-2.62,6.95,1.45,11.99,7.45,10.23,14.28-5.89-4.62-12.32-7.66-19.97-7.34,11.65,1.49,19.79,7.84,25.31,18.42,2.43-15.82,9.94-28.01,23.6-36.18-5.08,1.93-9.36,5.02-13.23,8.77-3.86,3.73-6.86,8.1-9.55,12.92-2.66-3.53-3.55-7.31-2.86-11.37,1.5-8.72,7.05-14.09,14.97-17.22,7.98-3.14,16.12-2.59,24.23-.46,5.06,1.33,9.84,3.38,14.46,5.82.49.26.99.5,1.48,1.1-2.95-.1-5.75,0-8.47.78-4.12,1.19-6.89,3.98-8.94,7.61-2.46,4.33-4.35,8.95-6.89,13.25-4.44,7.53-12.43,9.13-19.78,6.31-1.16-.44-2.26-1.03-3.34-1.64-.86-.48-1.21-.38-1.5.63-1.14,3.95-1.68,7.99-1.81,12.08-.13,4.09.03,8.17.47,12.24.06.57.4,1.32-.36,1.68-.84.39-1.78.48-2.65.1-.86-.38-.47-1.16-.44-1.8.2-4.13.67-8.29-.55-12.34-1.02-3.4-2.77-6.43-4.97-9.21-.5-.63-.74-.76-1.41.09-2.39,3-5.3,5.25-9.4,5.34-2.59.06-4.75-.98-6.69-2.53-2.56-2.05-5.02-4.24-7.57-6.31-3.37-2.73-7.07-2.66-10.89-1.11-.51.21-.98.55-1.76.48Z"/>
+                </svg>
+            </div>
+
+            <div class="hero-text-block">
+                <h1 class="brand-motto-headline">Organizá tu semana y comé rico sin complicarte.</h1>
+
+                <p class="brand-lead-caption">
+                    Comida casera lista para tu semana. <strong>Resolvé tus almuerzos y cenas</strong> con porciones balanceadas, nutritivas y listas para disfrutar.
+                </p>
+
+                <div class="badges-capsule-row">
+                    <span class="pill-badge-seal">🥗 100% Fresco</span>
+                    <span class="pill-badge-seal">❄️ Aptas Freezer y Microondas</span>
+                    <span class="pill-badge-seal">🥦 Calidad Casera</span>
+                    <span class="pill-badge-seal">🚚 Envíos en CABA</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. HERO CARD WHATSAPP DIRECTO -->
+        <a href="https://wa.me/5491125617372?text=%C2%A1Hola!%20%F0%9F%A5%91%20Quisiera%20pedir%20el%20men%C3%BA%20de%20viandas%20y%20organizar%20mi%20semana." target="_blank" rel="noopener noreferrer" class="card-whatsapp-portal">
+            <div class="hero-left-meta">
+                <span class="hero-live-beacon"><i class="pulse-core"></i> Atención Directa WhatsApp</span>
+                <h2 class="hero-action-title">Pedí tus Viandas acá</h2>
+                <span class="hero-action-caption">Envío bonificado en CABA · Pagás por transferencia</span>
+            </div>
+            <div class="whatsapp-bubble-btn">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </div>
+        </a>
+
+        <!-- 3. GRILLA BENTO CON COLORIMETRÍA ARMONIZADA DE PALTA -->
+        <section class="morph-bento-grid">
+
+            <!-- 1. CELDA VERDE PALTA (#79A13C) - PACK ADULTOS -->
+            <a href="https://wa.me/5491125617372?text=%C2%A1Hola!%20Quisiera%20armar%20mi%20Pack%20de%20Viandas%20(a%20partir%20de%206%20unidades)." target="_blank" rel="noopener noreferrer" class="bento-cell cell-palta-green">
+                <div class="cell-top-bar">
+                    <span class="cell-tag">01 · ADULTOS</span>
+                    <span class="cell-arrow">↗</span>
+                </div>
+                <div>
+                    <h3 class="cell-title">Pack Adultos</h3>
+                    <p class="cell-desc">Armá tu pack a partir de 6 viandas caseras y listas.</p>
+                </div>
+            </a>
+
+            <!-- 2. CELDA AZUL MEAL PLANS (#3884C5) - VER MENÚ SEMANAL -->
+            <a href="https://wa.me/5491125617372?text=%C2%A1Hola!%20Quisiera%20ver%20el%20men%C3%BA%20semanal%20disponible." target="_blank" rel="noopener noreferrer" class="bento-cell cell-palta-blue">
+                <div class="cell-top-bar">
+                    <span class="cell-tag">02 · MENÚ</span>
+                    <span class="cell-arrow">↗</span>
+                </div>
+                <div>
+                    <h3 class="cell-title">Menú Semanal</h3>
+                    <p class="cell-desc">Conocé la carta de platos frescos de esta semana.</p>
+                </div>
+            </a>
+
+            <!-- 3. CELDA VERDE BOSQUE (#4B612C) - MERCADO LIBRE -->
+            <a href="https://linktr.ee/paltamealplans" target="_blank" rel="noopener noreferrer" class="bento-cell cell-palta-deep">
+                <div class="cell-top-bar">
+                    <span class="cell-tag">03 · COMPRA</span>
+                    <span class="cell-arrow">↗</span>
+                </div>
+                <div>
+                    <h3 class="cell-title">Mercado Libre</h3>
+                    <p class="cell-desc">Packs disponibles con entrega y medios de pago integrados.</p>
+                </div>
+            </a>
+
+            <!-- 4. CELDA BLANCA BOTÁNICA - PROMO MAYORISTA 10% OFF -->
+            <a href="https://wa.me/5491125617372?text=%C2%A1Hola!%20Quisiera%20aprovechar%20el%2010%25%20de%20descuento%20en%20pedidos%20mayores%20a%2030%20viandas." target="_blank" rel="noopener noreferrer" class="bento-cell cell-white-card">
+                <div class="cell-top-bar">
+                    <span class="cell-tag">04 · PROMO</span>
+                    <span class="cell-arrow">↗</span>
+                </div>
+                <div>
+                    <h3 class="cell-title">10% OFF +30</h3>
+                    <p class="cell-desc">Pagando por transferencia en pedidos mayores a 30 viandas.</p>
+                </div>
+            </a>
+
+            <!-- 5. CELDA RECTANGULAR COMPLETA: CÓMO COMPRAR EN 3 PASOS -->
+            <a href="https://wa.me/5491125617372?text=%C2%A1Hola!%20Quiero%20pedir%20el%20men%C3%BA%20de%20esta%20semana." target="_blank" rel="noopener noreferrer" class="bento-cell cell-wide-card">
+                <div style="flex:1; min-width: 0;">
+                    <div class="cell-top-bar" style="margin-bottom: 2px;">
+                        <span class="cell-tag" style="color: var(--color-palta-deep);">¿CÓMO COMPRAR? · 3 PASOS SIMPLES</span>
+                    </div>
+                    <h3 class="cell-title">1. Pedís → 2. Pagás → 3. Recibís</h3>
+                    <p class="cell-desc" style="color: var(--color-text-muted);">Elegís tus viandas, pagás por transferencia y recibís en tu casa.</p>
+                </div>
+                <span class="cell-arrow" style="color: var(--color-palta-deep); font-size: 1.35rem;">↗</span>
+            </a>
+
+        </section>
+
+        <!-- 4. SHOWCASE DE PRODUCTOS Y PACKS CON FOTOS REALES Y PRECIOS ACTUALIZADOS -->
+        <section class="showcase-flow-box">
+            <div class="showcase-nav-row">
+                <span class="showcase-heading">Packs Más Elegidos</span>
+                <a href="https://wa.me/5491125617372?text=%C2%A1Hola!%20Quisiera%20ver%20todos%20los%20packs%20y%20el%20men%C3%BA%20disponible." target="_blank" rel="noopener noreferrer" class="showcase-cta">Pedir Menú →</a>
+            </div>
+
+            <div class="dishes-snap-slider">
+
+                <!-- PACK 1: 6 VIANDAS -->
+                <a href="https://wa.me/5491125617372?text=%C2%A1Hola!%20Quiero%20pedir%20el%20Pack%20de%206%20Viandas%20($63.600)" target="_blank" rel="noopener noreferrer" class="product-porcelain-card">
+                    <div class="product-frame-img">
+                        <span class="product-badge-corner" style="background: var(--color-palta-green);">DESDE 6</span>
+                        <img src="WhatsApp%20Image%202026-11-01%20at%2022.21.02.jpeg" alt="Pack 6 Viandas Caseras" loading="lazy">
+                    </div>
+                    <span class="product-name-label">Pack 6 Viandas Caseras</span>
+                    <span class="product-price-label">$63.600</span>
+                </a>
+
+                <!-- PACK 2: 12 VIANDAS -->
+                <a href="https://wa.me/5491125617372?text=%C2%A1Hola!%20Quiero%20pedir%20el%20Pack%20de%2012%20Viandas%20($127.200)" target="_blank" rel="noopener noreferrer" class="product-porcelain-card">
+                    <div class="product-frame-img">
+                        <span class="product-badge-corner" style="background: var(--color-palta-deep);">QUINCENAL</span>
+                        <img src="WhatsApp%20Image%202026-11-01%20at%2022.21.03.jpeg" alt="Pack 12 Viandas Caseras" loading="lazy">
+                    </div>
+                    <span class="product-name-label">Pack 12 Viandas Caseras</span>
+                    <span class="product-price-label">$127.200</span>
+                </a>
+
+                <!-- PACK 3: 24 VIANDAS -->
+                <a href="https://wa.me/5491125617372?text=%C2%A1Hola!%20Quiero%20pedir%20el%20Pack%20de%2024%20Viandas%20($254.400)" target="_blank" rel="noopener noreferrer" class="product-porcelain-card">
+                    <div class="product-frame-img">
+                        <span class="product-badge-corner" style="background: var(--color-palta-blue);">MENSUAL</span>
+                        <img src="WhatsApp%20Image%202026-11-01%20at%2022.21.04.jpeg" alt="Pack 24 Viandas Caseras" loading="lazy">
+                    </div>
+                    <span class="product-name-label">Pack 24 Viandas Caseras</span>
+                    <span class="product-price-label">$254.400</span>
+                </a>
+
+                <!-- PACK 4: 30 VIANDAS CON 10% OFF -->
+                <a href="https://wa.me/5491125617372?text=%C2%A1Hola!%20Quiero%20el%20Pack%20de%2030%20Viandas%20con%20el%2010%25%20OFF%20por%20transferencia%20($286.200)" target="_blank" rel="noopener noreferrer" class="product-porcelain-card">
+                    <div class="product-frame-img">
+                        <span class="product-badge-corner" style="background: var(--color-warm-accent);">10% OFF TRANSF.</span>
+                        <img src="WhatsApp%20Image%202026-11-01%20at%2022.21.03%20(1).jpeg" alt="Pack 30 Viandas Caseras" loading="lazy">
+                    </div>
+                    <span class="product-name-label">Pack 30 Viandas (+30 viandas)</span>
+                    <span class="product-price-label">$286.200</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- 5. VIRALES EN REDES DE PALTA CON FOTOS REALES -->
+        <section class="virals-dark-pod">
+            <div class="virals-header-line">
+                <span class="virals-main-title">En Nuestro Instagram</span>
+                <span class="virals-bubble-tag">@mealplanscaba</span>
+            </div>
+
+            <div class="virals-track-scroll">
+                <a href="https://www.instagram.com/reel/DdzDej3SLIe/" target="_blank" rel="noopener noreferrer" class="viral-story-tile">
+                    <img src="WhatsApp%20Image%202026-11-01%20at%2022.21.03%20(2).jpeg" alt="Semana ordenada" loading="lazy">
+                    <div class="play-ring-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                    </div>
+                    <div class="tile-caption">Semana Ordenada</div>
+                </a>
+
+                <a href="https://www.instagram.com/p/DQCl3UkjkYF/" target="_blank" rel="noopener noreferrer" class="viral-story-tile">
+                    <img src="WhatsApp%20Image%202026-11-01%20at%2022.21.03%20(3).jpeg" alt="Viandas Caseras" loading="lazy">
+                    <div class="play-ring-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                    </div>
+                    <div class="tile-caption">Comida Real</div>
+                </a>
+
+                <a href="https://www.instagram.com/mealplanscaba/" target="_blank" rel="noopener noreferrer" class="viral-story-tile">
+                    <img src="WhatsApp%20Image%202026-11-01%20at%2022.21.04%20(1).jpeg" alt="Real food for real people" loading="lazy">
+                    <div class="play-ring-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                    </div>
+                    <div class="tile-caption">Real Food</div>
+                </a>
+
+                <a href="https://www.instagram.com/reel/Dcgoa2HyZ8X/" target="_blank" rel="noopener noreferrer" class="viral-story-tile">
+                    <img src="WhatsApp%20Image%202026-11-01%20at%2022.21.04%20(2).jpeg" alt="Cómo Comprar" loading="lazy">
+                    <div class="play-ring-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                    </div>
+                    <div class="tile-caption">¿Cómo Pedir?</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 6. POD DE LOGÍSTICA & BENEFICIOS DE PALTA -->
+        <article class="info-enclosure-pod">
+            <div class="pod-head-bar">
+                <span class="pod-title-text">Envíos & Beneficios Meal Plans</span>
+                <span class="pill-badge-seal" style="border-color: var(--color-palta-green);">CABA</span>
+            </div>
+            <div class="pod-items-stack">
+                <div class="check-item-line">
+                    <span class="bullet-sun">★</span>
+                    <span><strong>Armá tu pack desde 6 viandas:</strong> Vos elegís la cantidad exacta que necesitás para tu rutina.</span>
+                </div>
+                <div class="check-item-line">
+                    <span class="bullet-sun">★</span>
+                    <span><strong>Envío bonificado en CABA:</strong> Recibí tus viandas caseras en la comodidad de tu casa.</span>
+                </div>
+                <div class="check-item-line">
+                    <span class="bullet-sun">★</span>
+                    <span><strong>Aptas freezer y microondas:</strong> Comida casera deliciosa, balanceada y lista en pocos minutos.</span>
+                </div>
+                <div class="check-item-line">
+                    <span class="bullet-sun">★</span>
+                    <span><strong>10% de descuento por transferencia:</strong> En pedidos mayores a 30 viandas ($286.200 las 30 viandas).</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 7. FOOTER NOBLE SIN TIENDA ONLINE -->
+        <footer class="hub-noble-footer">
+            <div class="footer-brand-monument">MEAL PLANS</div>
+            
+            <!-- FILA DE ICONOS VECTORIALES OFICIALES -->
+            <div class="footer-social-icons-row">
+                <!-- Instagram Oficial -->
+                <a href="https://www.instagram.com/mealplanscaba/" target="_blank" rel="noopener noreferrer" class="social-icon-bubble" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                
+                <!-- Facebook Oficial -->
+                <a href="https://web.facebook.com/people/Meal-Plans/61575672778497/#" target="_blank" rel="noopener noreferrer" class="social-icon-bubble" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                
+                <!-- WhatsApp Oficial -->
+                <a href="https://wa.me/5491125617372" target="_blank" rel="noopener noreferrer" class="social-icon-bubble" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                </a>
+            </div>
+
+            <p class="footer-address-caption">
+                Buenos Aires · Ciudad Autónoma de Buenos Aires (CABA)<br>
+                Contacto directo: paltamealplans@gmail.com · Tel: 11 2561-7372
+            </p>
+            <p class="footer-legal-copy">© 2026 MEAL PLANS · COMIDA CASERA Y SALUDABLE</p>
+        </footer>
+
+    </main>
+
+    <!-- CONTROLADOR JS LIVIANO DE MICRO-INTERACCIONES + AUDIO SYSTEM -->
+    <script>
+        // INSTANCIACIÓN DE EFECTOS DE SONIDO (Archivos alojados en la raíz del repositorio)
+        const sndClick = new Audio('mixkit-cool-interface-click-tone-2568.mp3');
+        const sndWhatsapp = new Audio('mixkit-quick-win-video-game-notification-269.mp3');
+
+        sndClick.preload = 'auto';
+        sndWhatsapp.preload = 'auto';
+
+        function playHaptic() {
+            if ('vibrate' in navigator) {
+                try { navigator.vibrate(10); } catch(e) {}
+            }
+        }
+
+        function playSound(type) {
+            try {
+                if (type === 'whatsapp-win') {
+                    sndWhatsapp.currentTime = 0;
+                    sndWhatsapp.play().catch(() => {});
+                } else {
+                    sndClick.currentTime = 0;
+                    sndClick.play().catch(() => {});
+                }
+            } catch(e) {}
+        }
+
+        // DELEGACIÓN GLOBAL DE EVENTOS DE CLIC PARA SONIDO Y HÁPTICO
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('a, button, .logo-free-stage, .bento-cell, .product-porcelain-card, .viral-story-tile');
+            if (!target) return;
+
+            playHaptic();
+
+            // EXCLUSIVIDAD: Sonido WIN únicamente para la Hero Card de Atención Directa WhatsApp
+            const isHeroWhatsAppCard = target.classList.contains('card-whatsapp-portal') || target.closest('.card-whatsapp-portal');
+
+            if (isHeroWhatsAppCard) {
+                playSound('whatsapp-win');
+            } else {
+                playSound('click'); // Absolutamente todo lo demás usa click-tone
+            }
+        });
+
+        // FÍSICA MAGNÉTICA SUAVE
+        document.querySelectorAll('.bento-cell, .card-whatsapp-portal, .product-porcelain-card, .social-icon-bubble').forEach(elem => {
+            elem.addEventListener('mousemove', (e) => {
+                const rect = elem.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                elem.style.transform = `translate(${x * 0.02}px, ${y * 0.02 - 3}px)`;
+            });
+            elem.addEventListener('mouseleave', () => {
+                elem.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html>
